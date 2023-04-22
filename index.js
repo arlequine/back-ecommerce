@@ -3,11 +3,11 @@ const app = express()
 require('dotenv').config()
 const cors = require('cors')
 require('./db/mongodb')
-const apirRouter = require('./apis')
+const apiRouter = require('./apis')
 
 app.use(express.json())
 app.use(cors())
-app.use('/api/v1', apirRouter)
+app.use('/api/v1', apiRouter)
 
 
 app.get('/', (req, res) => {

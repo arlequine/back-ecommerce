@@ -11,6 +11,7 @@ const authMiddleware = (req, res, next) => {
     req.user = decoded.data
     req.permissions = decoded.data.permissions
     const url = req.url.replace(/\//g, ':').slice(1)
+    console.log(req.user.permissions.indexOf(url))
     if (req.user.permissions.indexOf(url) === -1) {
       return res.status(403).send({
         error: 'tu no pasas, no tienes permisos'

@@ -2,7 +2,6 @@ const bcrypt = require('bcrypt');
 
 const authService = class {
   constructor(userService) {
-    console.log(userService)
     this.UserService = userService
   }
 
